@@ -84,8 +84,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CCAI.cs" />
+    <Compile Include="Assets\Scripts\CCAI.cs" />
+    <Compile Include="Assets\Scripts\Car.cs" />
     <Compile Include="Assets\Scripts\CarController.cs" />
+    <Compile Include="Assets\Scripts\GameMgr.cs" />
+    <Compile Include="Assets\Scripts\Waypoint.cs" />
     <Compile Include="Assets\race-track-lake\Standard Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
   </ItemGroup>
   <ItemGroup>
