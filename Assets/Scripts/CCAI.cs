@@ -29,7 +29,7 @@ public class CCAI : MonoBehaviour
     public bool smoothRotation = true;
 
     // holds all the Waypoint Objects that you assign in the inspector.
-    public Transform[] waypoints;
+    //public Transform[] waypoints;
 
     // This variable keeps track of which Waypoint Object
     private int WPindexPointer;
@@ -42,6 +42,12 @@ public class CCAI : MonoBehaviour
 
     void Update()
     {
+        // We have reached the end of the waypoints
+        if(WPindexPointer >= Waypoint.waypoints.Length)
+        {
+            WPindexPointer = 0;
+        }
+
         // If functionState variable is currently "0" then run "Accell()".
         if (functionState == 0)
         {
@@ -54,11 +60,14 @@ public class CCAI : MonoBehaviour
             StartCoroutine(Slow());
         }
 
-        waypoint = waypoints[WPindexPointer]; //Keep the object pointed toward the current Waypoint object.
+       // waypoint = waypoints[WPindexPointer]; //Keep the object pointed toward the current Waypoint object.
+        waypoint = Waypoint.waypoints[WPindexPointer];
     }
 
     void Accell()
     {
+        float distanceToWaypoint = Mathf.Infinity;
+
         if (accelState == false)
         {
             // Make sure that if Accell() is running, Slow() can not run.
@@ -68,6 +77,7 @@ public class CCAI : MonoBehaviour
 
         if (waypoint) //If there is a waypoint do the next "if".
         {
+            distanceToWaypoint = Vector3.Distance(this.transform.position, waypoint.transform.position);
             if (smoothRotation)
             {
                 // Look at the active waypoint.
@@ -90,6 +100,12 @@ public class CCAI : MonoBehaviour
             // ... turn off accelleration and set "currentSpeed" to be
             currentSpeed = speedLimit;
         }
+
+        // Move to our next waypoint
+        if(distanceToWaypoint <= 5.1f)
+        {
+            WPindexPointer++;
+        }
     }
 
     //The function "OnTriggerEnter" is called when a collision happens.
@@ -104,7 +120,7 @@ public class CCAI : MonoBehaviour
         WPindexPointer++;
 
         // When the array variable reaches the end of the list ...
-        if (WPindexPointer >= waypoints.Length)
+        if (WPindexPointer >= Waypoint.waypoints.Length)
         {
             // ... reset the active waypoint to the first object in the array variable
             // "waypoints" and start from the beginning.
