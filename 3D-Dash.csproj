@@ -99,6 +99,8 @@
     <Compile Include="Assets\Scripts\GameMgr.cs" />
     <Compile Include="Assets\Scripts\Waypoint.cs" />
     <Compile Include="Assets\race-track-lake\Standard Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
+    <Compile Include="Assets\sample_racer\scripts\SliderTextShow.cs" />
+    <Compile Include="Assets\sample_racer\scripts\SliderTextShowText.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\EasyRoads3D Free\Release Notes.txt" />

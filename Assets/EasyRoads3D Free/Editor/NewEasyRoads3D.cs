@@ -109,7 +109,7 @@ script.OOQDOOQQ = false;
 script.autoUpdate = true;
 script.surrounding = 3.0f;
 script.indent = 3.0f;
-script.geoResolution = 2f;
+script.geoResolution = 2.5f;
 script.objectType = objectType;
 script.materialType = 0;
 if(objectType == 1){

@@ -366,7 +366,7 @@ if(OldClosedTrack != target.iOS){
 target.OQDDQQDOOD.iOS = target.iOS;
 target.OQOQDCCDDD();
 }
-GUI.enabled = false;
+GUI.enabled = true;
 EditorGUILayout.Space();
 EditorGUILayout.BeginHorizontal();
 GUILayout.Label(new GUIContent("    Geometry Resolution", "The polycount of the generated surfaces. It is recommended to use a low resolution while creating the road. Use the maximum resolution when processing the final terrain."), GUILayout.Width(125) );
@@ -837,8 +837,8 @@ if((cEvent.shift  && cEvent.type == EventType.mouseDown) || target.OQOCCODCDC[1]
 var hit : RaycastHit;
 var mPos : Vector2 = cEvent.mousePosition;
 mPos.y = Screen.height - mPos.y - 40;
-//var ray : Ray = Camera.current.ScreenPointToRay(mPos);
-var ray : Ray = HandleUtility.GUIPointToWorldRay(cEvent.mousePosition);
+var ray : Ray = Camera.current.ScreenPointToRay(mPos);
+
 
 if (col.Raycast (ray, hit, 3000))
 {
