@@ -87,6 +87,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CarUserCtrl2.cs" />
     <Compile Include="Assets\EasyRoads3D Free\scripts\EasyRoads3DTerrainID.cs" />
     <Compile Include="Assets\EasyRoads3D Free\scripts\MarkerScript.cs" />
     <Compile Include="Assets\EasyRoads3D Free\scripts\RoadObjectScript.cs" />
@@ -96,8 +97,11 @@
     <Compile Include="Assets\Scripts\CCAI.cs" />
     <Compile Include="Assets\Scripts\Car.cs" />
     <Compile Include="Assets\Scripts\CarController.cs" />
+    <Compile Include="Assets\Scripts\CoinBehavior.cs" />
     <Compile Include="Assets\Scripts\GameMgr.cs" />
+    <Compile Include="Assets\Scripts\MenuAction.cs" />
     <Compile Include="Assets\Scripts\Waypoint.cs" />
+    <Compile Include="Assets\Scripts\coin.cs" />
     <Compile Include="Assets\race-track-lake\Standard Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
     <Compile Include="Assets\sample_racer\scripts\SliderTextShow.cs" />
     <Compile Include="Assets\sample_racer\scripts\SliderTextShowText.cs" />
